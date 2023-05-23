@@ -1,4 +1,4 @@
-package com.vishal.myapplication
+package com.vishal.socialmate
 
 import org.junit.Test
 
