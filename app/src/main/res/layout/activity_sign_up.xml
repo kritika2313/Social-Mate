@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
+
+    <ImageView
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/img_signup"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/aclonica"
+        android:text="Create Account"
+        android:textColor="@color/light_blue"
+        android:textSize="@dimen/_30ssp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:textStyle="normal"
+        android:inputType="text"
+        android:textSize="@dimen/_15ssp"
+        android:maxLines="1"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="@dimen/_6sdp"
+        android:padding="@dimen/_9sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/et_bg_signup"
+        android:hint="Enter Your Name:"
+        android:textColorHint="@color/signup_hint_color"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:textStyle="normal"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textSize="@dimen/_15ssp"
+        android:background="@drawable/et_bg_signup"
+        android:padding="@dimen/_9sdp"
+        android:hint="Enter Your Email"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="@dimen/_6sdp"
+        android:textColorHint="@color/signup_hint_color"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/signup_hint_color"
+        android:background="@drawable/et_bg_signup"
+        android:padding="@dimen/_9sdp"
+        android:maxLines="1"
+        android:textStyle="normal"
+        android:textSize="@dimen/_15ssp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:drawableStart="@drawable/ic_pass"
+        android:drawablePadding="@dimen/_6sdp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColorHint="@color/signup_hint_color"
+        android:background="@drawable/et_bg_signup"
+        android:padding="@dimen/_9sdp"
+        android:maxLines="1"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="normal"
+        android:drawableStart="@drawable/ic_confirm_pass"
+        android:drawablePadding="@dimen/_6sdp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:background="@drawable/btn_bg_signup"
+        android:text="Sign Up"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_25sdp"/>
+
+    <ProgressBar
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:visibility="invisible"/>
+
+</LinearLayout>
