@@ -75,6 +75,17 @@
         android:drawableStart="@drawable/ic_confirm_pass"
         android:drawablePadding="@dimen/_6sdp"/>
 
+    <TextView
+        android:id="@+id/txt_switch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not have a Account"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/light_black"
+        android:clickable="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_35sdp"

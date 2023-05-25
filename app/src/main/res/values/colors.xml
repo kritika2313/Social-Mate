@@ -15,4 +15,5 @@
     <color name="signup_hint_color">#4B4141</color>
     <color name="drawable_light_color">#3D3232</color>
     <color name="btn_border_signup_clr">#F1ACAC</color>
+    <color name="light_black">#514949</color>
 </resources>

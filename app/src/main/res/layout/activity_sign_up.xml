@@ -92,6 +92,18 @@
         android:drawableStart="@drawable/ic_confirm_pass"
         android:drawablePadding="@dimen/_6sdp"/>
 
+    <TextView
+        android:id="@+id/txt_switch1"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/light_black"
+        android:layout_height="wrap_content"
+        android:text="Already Have Account"
+        android:clickable="true"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_35sdp"
@@ -101,7 +113,7 @@
         android:text="Sign Up"
         android:textSize="@dimen/_15ssp"
         android:textColor="@color/white"
-        android:layout_marginTop="@dimen/_25sdp"/>
+        android:layout_marginTop="@dimen/_15sdp"/>
 
     <ProgressBar
         android:layout_width="@dimen/_30sdp"
