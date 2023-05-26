@@ -25,6 +25,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/login_email"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,6 +44,7 @@
         android:textColorHint="@color/signup_hint_color"/>
 
     <EditText
+        android:id="@+id/login_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
@@ -60,6 +62,7 @@
         android:drawablePadding="@dimen/_6sdp"/>
 
     <EditText
+        android:id="@+id/login_cPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
@@ -95,6 +98,7 @@
         android:orientation="horizontal">
 
         <CheckBox
+            android:id="@+id/login_checkbox"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
             android:checked="false"/>
@@ -113,6 +117,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_35sdp"
         android:layout_gravity="center"
@@ -124,6 +129,7 @@
         android:layout_marginTop="@dimen/_20sdp"/>
 
     <ProgressBar
+        android:id="@+id/login_progressBar"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_30sdp"
         android:layout_gravity="center"
