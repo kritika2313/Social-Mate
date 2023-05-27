@@ -1,11 +1,14 @@
-package com.vishal.myapplication
+package com.vishal.socialmate
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -13,7 +16,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.vishal.socialmate.MainActivity
+import com.vishal.myapplication.R
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -28,7 +31,7 @@ class SignUpActivity : AppCompatActivity() {
         val txtReg = findViewById<TextView>(R.id.txt_switch1)
 
         txtReg.setOnClickListener {
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -41,6 +44,17 @@ class SignUpActivity : AppCompatActivity() {
         val signupConfirmPass = findViewById<EditText>(R.id.signup_cPass)
 
         val progressBar = findViewById<ProgressBar>(R.id.signup_progress)
+        val checkbox = findViewById<CheckBox>(R.id.signup_checkbox)
+
+        checkbox.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                signupPass.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                signupConfirmPass.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            } else {
+                signupPass.transformationMethod = PasswordTransformationMethod.getInstance()
+                signupConfirmPass.transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+        }
 
         btn.setOnClickListener {
             progressBar.visibility = View.VISIBLE
@@ -99,7 +113,7 @@ class SignUpActivity : AppCompatActivity() {
                     )
                     userId?.let { usersCollection.document(it).set(userData) }
 
-                    val intent = Intent(this,MainActivity::class.java)
+                    val intent = Intent(this, Profile_Information_Activity::class.java)
                     startActivity(intent)
                     finish()
                     Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show()

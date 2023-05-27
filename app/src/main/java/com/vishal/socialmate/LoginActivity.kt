@@ -1,4 +1,4 @@
-package com.vishal.myapplication
+package com.vishal.socialmate
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
-import com.vishal.socialmate.MainActivity
+import com.vishal.myapplication.R
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth

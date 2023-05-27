@@ -16,4 +16,6 @@
     <color name="drawable_light_color">#3D3232</color>
     <color name="btn_border_signup_clr">#F1ACAC</color>
     <color name="light_black">#514949</color>
+    <color name="blue">#4AB5E6</color>
+    <color name="pink">#E45B89</color>
 </resources>
