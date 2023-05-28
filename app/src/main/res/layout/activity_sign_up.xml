@@ -107,13 +107,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="@dimen/_100sdp"
+                android:layout_width="@dimen/_98sdp"
                 android:textSize="@dimen/_10ssp"
                 android:textColor="@color/light_black"
                 android:layout_height="wrap_content"
                 android:text="Already Have Account"
                 android:clickable="true"
-                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_1sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginTop="@dimen/_10sdp"/>
 

@@ -20,7 +20,7 @@ import com.vishal.myapplication.R
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    val emailPattern = Regex("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+    // val emailPattern = Regex("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
 
 
     @SuppressLint("MissingInflatedId")
@@ -36,6 +36,8 @@ class SignUpActivity : AppCompatActivity() {
             finish()
         }
         auth = FirebaseAuth.getInstance()
+
+
 
         val btn = findViewById<Button>(R.id.signup_btn)
         val signupName = findViewById<EditText>(R.id.signup_name)
@@ -75,9 +77,9 @@ class SignUpActivity : AppCompatActivity() {
             } else if (cPass.isEmpty()) {
                 progressBar.visibility = View.GONE
                 Toast.makeText(this, "Confirm password can't be Empty \uD83D\uDE1F", Toast.LENGTH_SHORT).show()
-            } else if (!email.matches(emailPattern)) {
-                progressBar.visibility = View.GONE
-                Toast.makeText(this, "Invalid Email Address \uD83E\uDD72", Toast.LENGTH_SHORT).show()
+//            } else if (!email.matches(emailPattern)) {
+//                progressBar.visibility = View.GONE
+//                Toast.makeText(this, "Invalid Email Address \uD83E\uDD72", Toast.LENGTH_SHORT).show()
             } else if (pass != cPass){
                 progressBar.visibility = View.GONE
                 Toast.makeText(this,"Password and confirm password does not match \uD83E\uDEE2",Toast.LENGTH_SHORT).show()
@@ -86,6 +88,37 @@ class SignUpActivity : AppCompatActivity() {
                 signupUser(email,pass,name)
             }
 
+        }
+
+        val user = FirebaseAuth.getInstance().currentUser
+        if(user != null)
+        {
+            val firestoreRef = FirebaseFirestore.getInstance().collection("users")
+            val emailKey = user.email?.replace(".","_")
+
+            if(emailKey != null)
+            {
+                firestoreRef.document(emailKey).get()
+                    .addOnSuccessListener {
+                        if(it.exists() && it.contains("username")) {
+                            // User's profile Information is Already Filled
+                            val intent = Intent(this,MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            // User's Profile Information is not Filled
+                            val intent = Intent(this,Profile_Information_Activity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                    }
+                    .addOnFailureListener {
+                        // Failed to retrieve Profile Information
+                        val intent = Intent(this,Profile_Information_Activity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+            }
         }
     }
 

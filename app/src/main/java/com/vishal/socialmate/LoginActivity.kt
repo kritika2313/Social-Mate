@@ -9,6 +9,7 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.vishal.myapplication.R
 
 class LoginActivity : AppCompatActivity() {
@@ -76,15 +77,35 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, pass)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            progressBar.visibility = View.GONE
-                            Toast.makeText(
-                                this,
-                                "Login successful \uD83D\uDE0D",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
-                            finish()
+                            val user = FirebaseAuth.getInstance().currentUser
+                            val firestoreRef = FirebaseFirestore.getInstance().collection("users")
+                            val emailKey = user?.email?.replace(".","_")
+
+                            if(user != null && emailKey != null) {
+                                firestoreRef.document(emailKey).get()
+                                    .addOnSuccessListener {
+                                        if(it.exists() && it.contains("username")) {
+                                            // User's profile Information is Already Filled
+                                            progressBar.visibility = View.GONE
+                                            Toast.makeText(this, "Login successful \uD83D\uDE0D", Toast.LENGTH_SHORT).show()
+                                            val intent = Intent(this,MainActivity::class.java)
+                                            startActivity(intent)
+                                            finish()
+                                        } else {
+                                            // User's profile Information is not filled
+                                            progressBar.visibility = View.GONE
+                                            Toast.makeText(this, "Login successful \uD83D\uDE0D", Toast.LENGTH_SHORT).show()
+                                            val intent = Intent(this,Profile_Information_Activity::class.java)
+                                            startActivity(intent)
+                                            finish()
+                                        }
+                                    }
+                                    .addOnFailureListener {
+                                        progressBar.visibility = View.GONE
+                                        // Failed to retrieve profile Information
+                                        Toast.makeText(this,"Failed to retrieve profile Information",Toast.LENGTH_SHORT).show()
+                                    }
+                            }
                         } else {
                             progressBar.visibility = View.GONE
                             Toast.makeText(
