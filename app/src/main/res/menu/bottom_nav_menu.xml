@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_frag"
+        android:icon="@drawable/ic_home_frag"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/search_frag"
+        android:icon="@drawable/ic_frag_search"
+        android:title="Search"/>
+
+    <item
+        android:id="@+id/placeholder"
+        android:title=""/>
+
+    <item
+        android:id="@+id/ask_frag"
+        android:icon="@drawable/ic_frag_ask"
+        android:title="Ask"/>
+
+    <item
+        android:id="@+id/profile_frag"
+        android:icon="@drawable/ic_frag_profile"
+        android:title="Profile"/>
+
+</menu>

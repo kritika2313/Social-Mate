@@ -45,7 +45,7 @@
             android:padding="@dimen/_9sdp"
             android:layout_marginBottom="@dimen/_20sdp"
             android:background="@drawable/et_bg_signup"
-            android:hint="Enter Your Name:"
+            android:hint="Enter Your Name"
             android:textColorHint="@color/signup_hint_color"/>
 
         <EditText
@@ -145,6 +145,7 @@
                 android:checked="false"/>
 
             <TextView
+                android:id="@+id/txt_show_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_3sdp"
@@ -177,7 +178,5 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:visibility="invisible"/>
     </LinearLayout>
-
-
 
 </ScrollView>

@@ -14,13 +14,15 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.vishal.myapplication.R
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    // val emailPattern = Regex("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+    val emailPattern = Regex("[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+    lateinit var progressBar : ProgressBar
 
 
     @SuppressLint("MissingInflatedId")
@@ -45,7 +47,7 @@ class SignUpActivity : AppCompatActivity() {
         val signupPass = findViewById<EditText>(R.id.signup_pass)
         val signupConfirmPass = findViewById<EditText>(R.id.signup_cPass)
 
-        val progressBar = findViewById<ProgressBar>(R.id.signup_progress)
+        progressBar = findViewById(R.id.signup_progress)
         val checkbox = findViewById<CheckBox>(R.id.signup_checkbox)
 
         checkbox.setOnCheckedChangeListener { _, isChecked ->
@@ -77,9 +79,9 @@ class SignUpActivity : AppCompatActivity() {
             } else if (cPass.isEmpty()) {
                 progressBar.visibility = View.GONE
                 Toast.makeText(this, "Confirm password can't be Empty \uD83D\uDE1F", Toast.LENGTH_SHORT).show()
-//            } else if (!email.matches(emailPattern)) {
-//                progressBar.visibility = View.GONE
-//                Toast.makeText(this, "Invalid Email Address \uD83E\uDD72", Toast.LENGTH_SHORT).show()
+            } else if (!email.matches(emailPattern)) {
+                progressBar.visibility = View.GONE
+                Toast.makeText(this, "Invalid Email Address \uD83E\uDD72", Toast.LENGTH_SHORT).show()
             } else if (pass != cPass){
                 progressBar.visibility = View.GONE
                 Toast.makeText(this,"Password and confirm password does not match \uD83E\uDEE2",Toast.LENGTH_SHORT).show()
@@ -152,7 +154,14 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show()
                 } else {
                     val exception = task.exception
-                    Toast.makeText(this, "Sign up failed: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                    if(exception is FirebaseAuthUserCollisionException) {
+                        // Email already exists
+                        progressBar.visibility = View.GONE
+                        Toast.makeText(this,"Email Already Exists \uD83D\uDE1F",Toast.LENGTH_SHORT).show()
+                    } else {
+                        progressBar.visibility = View.GONE
+                        Toast.makeText(this, "Sign up failed: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
     }
