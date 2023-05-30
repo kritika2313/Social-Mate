@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
         val addBtn = findViewById<FloatingActionButton>(R.id.fab)
         addBtn.setOnClickListener {
             replaceFragment(AddFragment(),false)
