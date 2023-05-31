@@ -70,4 +70,6 @@ class MainActivity : AppCompatActivity() {
 
         isHomeFragmentVisible = fragment is HomeFragment
     }
+
+
 }

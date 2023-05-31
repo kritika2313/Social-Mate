@@ -1,4 +1,4 @@
-package com.vishal.socialmate
+package com.vishal.myapplication
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
