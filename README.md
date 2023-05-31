@@ -1,1 +1,2 @@
-# This Project was currenlty under Development Stage
+# Social-Mate
+This Project was currently Under Development Stage.
