@@ -26,14 +26,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_20ssp"
-                    android:text="Disocver"
+                    android:text="Discover"
                     android:textStyle="bold"
+                    android:layout_marginTop="@dimen/_3sdp"
                     android:fontFamily="monospace"
                     android:textColor="@color/black"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_120sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:src="@drawable/chat_icon"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:src="@drawable/sample_img"
                     android:layout_alignParentEnd="true"
                     app:civ_border_width="@dimen/_1sdp"

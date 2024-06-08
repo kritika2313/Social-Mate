@@ -10,15 +10,16 @@
         android:id="@+id/search_frag"
         android:icon="@drawable/ic_frag_search"
         android:title="Search"/>
-
     <item
         android:id="@+id/placeholder"
         android:title=""/>
 
+
     <item
-        android:id="@+id/ask_frag"
-        android:icon="@drawable/ic_frag_ask"
-        android:title="Ask"/>
+        android:id="@+id/notification_frag"
+        android:icon="@drawable/ic_frag_notification"
+        android:title="Notify"/>
+
 
     <item
         android:id="@+id/profile_frag"
@@ -26,3 +27,4 @@
         android:title="Profile"/>
 
 </menu>
+

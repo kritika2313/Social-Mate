@@ -36,8 +36,10 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home_frag -> replaceFragment(HomeFragment(),false)
                 R.id.search_frag -> replaceFragment(SearchFragment(),false)
-                R.id.ask_frag -> replaceFragment(AskFragment(),false)
+
                 R.id.profile_frag -> replaceFragment(ProfileFragment(),false)
+                R.id.notification_frag->replaceFragment(ProfileFragment (),false)
+
             }
             true
         }

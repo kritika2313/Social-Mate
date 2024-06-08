@@ -3,29 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/et_bg_signup"
     android:orientation="vertical"
     tools:context="com.vishal.socialmate.SignUpActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_150sdp"
-            android:src="@drawable/img_signup"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginStart="@dimen/_200sdp"
+            android:background="@drawable/bubble_background" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_50sdp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/aclonica"
+            android:fontFamily="@font/akaya_telivigala"
             android:text="Create Account"
-            android:textColor="@color/light_blue"
+            android:textColor="#132AAE"
             android:textSize="@dimen/_30ssp"
             android:textStyle="bold" />
 
@@ -177,6 +179,12 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_15sdp"
             android:visibility="invisible"/>
-    </LinearLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_145sdp"
+            android:layout_marginTop="@dimen/_290sdp"
+            android:background="@drawable/bubble_back2" />
+
+    </LinearLayout>
 </ScrollView>
