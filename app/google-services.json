@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "824449984580",
-    "project_id": "social-mate-4b1c8",
-    "storage_bucket": "social-mate-4b1c8.appspot.com"
+    "project_number": "826393890181",
+    "project_id": "social-mate-7cc79",
+    "storage_bucket": "social-mate-7cc79.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:824449984580:android:423b69d6d95482da66b411",
+        "mobilesdk_app_id": "1:826393890181:android:3aed28f504d411ab7088ec",
         "android_client_info": {
           "package_name": "com.vishal.socialmate"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyATIKxLzgTYGugCt8aRsuFqvUqtmrDg6ZU"
+          "current_key": "AIzaSyCn7Vt3Ci6OZW6zKNbviykgFrKAf4BdjBg"
         }
       ],
       "services": {
